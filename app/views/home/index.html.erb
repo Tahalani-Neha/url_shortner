@@ -4,12 +4,15 @@
   	  <div class="card-body">
   	    <%= form_with model: @link, remote: true do |form| %>
   	      <h5 class="card-title">Enter a URL to shorten</h5>
-		  <%= form.text_field :original_url, class: "form-control", placeholder: "Enter URL..." %>
-		  <%= form.submit "Shorten", class: "btn btn-primary mt-2" %>
-		<% end %>
+    		  <%= form.text_field :original_url, class: "form-control", placeholder: "Enter URL..." %>
+    		  <%= form.submit "Shorten", class: "btn btn-primary mt-2" %>
+    		<% end %>
       </div>
       <div id="short-link">
 	
+      </div>
+      <div id="analytics">
+         <%= link_to(raw("Analytics"), :controller => :analytics, :action => :index) %>
       </div>
     </div>
   </div>

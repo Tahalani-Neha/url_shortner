@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="p-5">
+  	<div class="card">
+  	  <div class="card-body">
+  	    <h5 class="card-title">Analyctics</h5>
+
+  	      <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Sr no</th>
+                  <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                  <th>Short link<th>
+                  <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                  <th>Count of links</th>
+                  <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% Link.all.each_with_index do |link, index| %>
+                  <tr>
+                    <td> <%= index + 1 %> </td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td> <%= link.try(:shortened_url) %> </td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td> <%= link.try(:clicked) || 0 %> </td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+		  
+		
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

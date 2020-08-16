@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_09_062028) do
+ActiveRecord::Schema.define(version: 2020_08_16_060755) do
 
   create_table "links", force: :cascade do |t|
     t.string "lookup_code"
     t.string "original_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "clicked"
   end
 
 end

@@ -3,7 +3,7 @@ class LinksController < ApplicationController
   def show
     link = Link.find_by(lookup_code: params[:lookup_code])
     render 'errors/404', status: 404 if link.nil?
-    link.update_attribute(:clicked, link.clicked + 1)
+    link.update_attribute(:clicked, (link.clicked || 0) + 1)
     redirect_to link.original_url
   end
 
